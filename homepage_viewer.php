@@ -7,7 +7,7 @@
 <?php
 $sql = "Select question,answer From info"
 $result = mysqli_query($con, $sql);
-			 $row = mysqli_fetch_array($result);
+$row = mysqli_fetch_array($result);
  ?>
 
 </body>
