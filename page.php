@@ -8,18 +8,34 @@
   tr:nth-child(even) {background-color: #ffdfa6}
 
 	</style>
+<<<<<<< HEAD
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>FQA</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/loginmodel.css">
+	</head>
+=======
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>FQA</title>
 
+<<<<<<< HEAD
 	
+=======
+
+
+>>>>>>> c5e97b00ce60ac03ce657ef20a307dc3c1cccff0
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
+>>>>>>> 7696e1fbdeaa1a219fac783be4491218527a1d21
 <body>
   <?php
 
@@ -61,7 +77,55 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 					<ul class="nav navbar-nav navbar-right">
-						<button class="button button1">Login</button>
+
+						<!--<button class="button button1">Login</button>-->
+
+						<button class="button button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+						<div id="id01" class="modal">
+
+							<form class="modal-content animate" action="/action_page.php">
+								
+
+								<div class="container">
+									<label><b>Username</b></label>
+									<input type="text" placeholder="Enter Username" name="uname" required>
+
+									<label><b>Password</b></label>
+									<input type="password" placeholder="Enter Password" name="psw" required>
+
+									<button type="submit">Login</button>
+									<input type="checkbox" checked="checked"> Remember me
+								</div>
+
+								<div class="container" style="background-color:#f1f1f1">
+									<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+									<span class="psw">Forgot <a href="#">password?</a></span>
+								</div>
+							</form>
+						</div>
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById('id01');
+
+						// When the user clicks anywhere outside of the modal, close it
+						window.onclick = function(event) {
+							if (event.target == modal) {
+								modal.style.display = "none";
+							}
+						}
+						</script>
+
+
+
+
+
+
+
+
+
+
 					</ul>
 
 				</div>
@@ -75,12 +139,8 @@
 
 
 			<div class="icon">
-<<<<<<< HEAD
-				<label class="label" for="name">search</label>
-=======
 
->>>>>>> d8ac861ca135098d58736e10ee933a073a3a787f
-				<input class="search_text" type="text" name="search_text" id="search_text" required>
+				<input class="search_text" type="text" name="search_text" onkeyup="myFunction()" id="myInput" required>
 		    </div>
 
 
@@ -91,7 +151,7 @@
 </div>
 
 <div class="panel-body">
-                <table class="table display">
+                <table class="table display" >
                     <thead>
 												<tr>
 													<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION</strong> </td>
@@ -107,8 +167,8 @@
                             <th>แก้ไขคำตอบ</th> -->
                         </tr>
                     </thead>
-
-                    <tbody>
+<div id="result">
+                    <tbody id="myTable">
 
                        <!--  <tr>
                             <td class="active" style="text-align: center;" colspan="6">
@@ -116,14 +176,10 @@
                             </td>
                         </tr> -->
                         <?php
-												if(isset($_POST["query"])){
-                       $search = mysqli_real_escape_string($conn, $_POST["query"]);
-                       $sql = "  SELECT * FROM info
-                       WHERE question LIKE '%".$search."%'
-                       OR answer LIKE '%".$search."%' ";
-										 }else {
+
+
 										 	  $sql = "SELECT question,answer FROM info";
-										 }
+
 											 $result = $conn->query($sql);
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -171,7 +227,7 @@
 									  	$result2 = mysqli_query($conn, $sql2);
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
-										<tbody>
+										<tbody id="myTable">
                         <?php
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -219,8 +275,8 @@
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
 
-										<tbody>
-											<div id="result">
+										<tbody id="myTable">
+
                         <?php
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -248,9 +304,9 @@
 
                             </td>
                         </tr>
-</div>
-                    </tbody>
 
+                    </tbody>
+</div>
 										<thead>
 												<tr>
 													<td class="active" style="text-align: center;" colspan="6"> <strong>&nbsp</strong> </td>
@@ -261,38 +317,30 @@
                 </table>
             </div>
 
+
+						<script>
+
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>
-
-
-
-<script>
-$(document).ready(function(){
-
- load_data();
-
- function load_data(query)
- {
-  $.ajax({
-   url:"page.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('#result').html(data);
-   }
-  });
- }
- $('#search_text').keyup(function(){
-  var search = $(this).val();
-  if(search != '')
-  {
-   load_data(search);
-  }
-  else
-  {
-   load_data();
-  }
- });
-});
-</script>
