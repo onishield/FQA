@@ -76,7 +76,11 @@
 
 
 			<div class="icon">
+<<<<<<< HEAD
 				<label class="label" for="name">search</label>
+=======
+
+>>>>>>> d8ac861ca135098d58736e10ee933a073a3a787f
 				<input class="search_text" type="text" name="search_text" id="search_text" required>
 		    </div>
 
