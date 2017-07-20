@@ -20,7 +20,7 @@
 </head>
 <body>
   <?php
-  $sql = "SELECT question,answer FROM info";
+
 
 //  $row = mysqli_fetch_array($result);
    ?>
@@ -111,11 +111,13 @@
                         </tr> -->
                         <?php
 												if(isset($_POST["query"])){
-                       $search = mysqli_real_escape_string($connect, $_POST["query"]);
+                       $search = mysqli_real_escape_string($conn, $_POST["query"]);
                        $sql = "  SELECT * FROM info
                        WHERE question LIKE '%".$search."%'
                        OR answer LIKE '%".$search."%' ";
-                       }
+										 }else {
+										 	  $sql = "SELECT question,answer FROM info";
+										 }
 											 $result = $conn->query($sql);
                            if(mysqli_num_rows($result) == 0){
                          ?>
