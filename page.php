@@ -12,6 +12,7 @@
 	<meta charset="UTF-8">
 	<title>FQA</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -75,7 +76,7 @@
 
 
 			<div class="icon">
-				
+				<label class="label" for="name">search</label>
 				<input class="search_text" type="text" name="search_text" id="search_text" required>
 		    </div>
 
@@ -214,8 +215,9 @@
 									  	$result3 = mysqli_query($conn, $sql3);
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
-										 <div id="result">
+
 										<tbody>
+											<div id="result">
                         <?php
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -243,9 +245,9 @@
 
                             </td>
                         </tr>
-
+</div>
                     </tbody>
-										</div>
+
 										<thead>
 												<tr>
 													<td class="active" style="text-align: center;" colspan="6"> <strong>&nbsp</strong> </td>
