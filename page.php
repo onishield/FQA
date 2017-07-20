@@ -11,6 +11,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>FQA</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -20,7 +25,7 @@
 </head>
 <body>
   <?php
-  $sql = "SELECT question,answer FROM info";
+
 
 //  $row = mysqli_fetch_array($result);
    ?>
@@ -73,7 +78,7 @@
 
 
 			<div class="icon">
-				<!--<label class="label" for="name">search</label>-->
+				<label class="label" for="name">search</label>
 				<input class="search_text" type="text" name="search_text" id="search_text" required>
 		    </div>
 
@@ -115,7 +120,9 @@
                        $sql = "  SELECT * FROM info
                        WHERE question LIKE '%".$search."%'
                        OR answer LIKE '%".$search."%' ";
-                       }
+										 }else {
+										 	  $sql = "SELECT question,answer FROM info";
+										 }
 											 $result = $conn->query($sql);
                            if(mysqli_num_rows($result) == 0){
                          ?>
