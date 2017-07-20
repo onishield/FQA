@@ -73,7 +73,7 @@
 
 
 			<div class="icon">
-				<label class="label" for="name">search</label>
+				<!--<label class="label" for="name">search</label>-->
 				<input class="search_text" type="text" name="search_text" id="search_text" required>
 		    </div>
 
