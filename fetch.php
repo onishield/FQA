@@ -20,7 +20,7 @@ else
 $result = mysqli_query($connect, $query);
 if(mysqli_num_rows($result) > 0)
 {
- $output .= '
+ $output = '
   <div class="table-responsive">
    <table class="table table bordered">
     <tr>
