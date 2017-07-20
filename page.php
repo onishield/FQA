@@ -3,6 +3,11 @@
 
 <html>
 <head>
+	<style>
+	tr:nth-child(odd) {background-color: #ffd994}
+  tr:nth-child(even) {background-color: #ffdfa6}
+
+	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>FQA</title>
@@ -47,7 +52,7 @@
 					  <span class="icon-bar"></span>
 
 				    </button>
-				<a href="#" class="navbar-brand">FQA CAT</a>
+				<a class="navbar-brand"><img src="Logo.png" width=100px height=30px;></a>
 
 				</div><!-- navbar-header -->
 
