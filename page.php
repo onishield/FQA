@@ -116,7 +116,7 @@
                         </tr> -->
                         <?php
 												if(isset($_POST["query"])){
-                       $search = mysqli_real_escape_string($connect, $_POST["query"]);
+                       $search = mysqli_real_escape_string($conn, $_POST["query"]);
                        $sql = "  SELECT * FROM info
                        WHERE question LIKE '%".$search."%'
                        OR answer LIKE '%".$search."%' ";
