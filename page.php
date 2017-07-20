@@ -1,3 +1,4 @@
+<?PHP require_once ("connect.php"); ?>
 <!DOCTYPE html>
 
 <html>
@@ -8,14 +9,14 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+	 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
   <?php
-  $sql = "Select question,answer From info"
-  $result = mysqli_query($con, $sql);
+  $sql = "SELECT question,answer FROM info";
+  $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_array($result);
    ?>
 <div id="wrapper">
@@ -113,30 +114,21 @@
                            ?>
                            <?php
                            $i = 0;
-                           ($row = mysqli_fetch_array($result)){
+                           while($row = mysqli_fetch_array($result)){
                            ?>
                              <tr>
                              <td><?php echo ++$i; ?></td>
                              <td><?php echo $row['question']; ?></td>
-                           <td><?php echo $row['answer']; ?></td>
+                           <td><?php echo  nl2br($row['answer']); ?></td>
 
 
                              </tr>
                            <?php
                                  }
                            ?>
-                        <!-- <tr>
-                            <td>1</td>
-                            <td><a href="#" class="active">What is Cisco</a></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                               <!--  <a class="btn btn-primary" href="index.php?action=addOrEdit.employee&employeeId=<?php echo $row['employee_id']; ?>">แก้ไข</a>
-                                <a class="btn btn-danger" onclick="javascript:deleteEmployee(<?php echo $row['employee_id']; ?>);">ลบ</a> -->
+
                             </td>
-                        </tr> -->
+                        </tr>
 
                     </tbody>
                 </table>
