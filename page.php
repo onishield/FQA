@@ -8,6 +8,19 @@
   tr:nth-child(even) {background-color: #ffdfa6}
 
 	</style>
+<<<<<<< HEAD
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>FQA</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/loginmodel.css">
+	</head>
+=======
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>FQA</title>
@@ -18,6 +31,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
+>>>>>>> 7696e1fbdeaa1a219fac783be4491218527a1d21
 <body>
   <?php
 
@@ -59,7 +73,55 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 					<ul class="nav navbar-nav navbar-right">
-						<button class="button button1">Login</button>
+
+						<!--<button class="button button1">Login</button>-->
+
+						<button class="button button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+						<div id="id01" class="modal">
+
+							<form class="modal-content animate" action="/action_page.php">
+								
+
+								<div class="container">
+									<label><b>Username</b></label>
+									<input type="text" placeholder="Enter Username" name="uname" required>
+
+									<label><b>Password</b></label>
+									<input type="password" placeholder="Enter Password" name="psw" required>
+
+									<button type="submit">Login</button>
+									<input type="checkbox" checked="checked"> Remember me
+								</div>
+
+								<div class="container" style="background-color:#f1f1f1">
+									<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+									<span class="psw">Forgot <a href="#">password?</a></span>
+								</div>
+							</form>
+						</div>
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById('id01');
+
+						// When the user clicks anywhere outside of the modal, close it
+						window.onclick = function(event) {
+							if (event.target == modal) {
+								modal.style.display = "none";
+							}
+						}
+						</script>
+
+
+
+
+
+
+
+
+
+
 					</ul>
 
 				</div>
