@@ -21,7 +21,6 @@ else
 $result = mysqli_query($connect, $query);
 if(mysqli_num_rows($result) > 0)
 {
-<<<<<<< HEAD
  $output = '
   <div class="table-responsive">
    <table class="table table bordered">
@@ -32,10 +31,6 @@ if(mysqli_num_rows($result) > 0)
     </tr>
  ';
  while($row = mysqli_fetch_array($result))
-=======
-    $i = 0;
- while($row = $result->fetch_array())
->>>>>>> c5e97b00ce60ac03ce657ef20a307dc3c1cccff0
  {
   $output = '
    <tr>
