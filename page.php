@@ -192,8 +192,8 @@
                         </tr>
                     </thead>
 										<?php
-										  $sql2 = "SELECT question,answer FROM info2";
-									  	$result2 = mysqli_query($conn, $sql2);
+										  $sql3 = "SELECT question,answer FROM info3";
+									  	$result3 = mysqli_query($conn, $sql3);
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
 										<tbody>
@@ -210,12 +210,12 @@
                            ?>
                            <?php
                            $i = 0;
-                           while($row2 = $result2->fetch_array()){
+                           while($row3 = $result3->fetch_array()){
                            ?>
                              <tr>
                              <td><?php echo ++$i; ?></td>
-                             <td><?php echo $row2['question']; ?></td>
-                           	 <td><?php echo  nl2br($row2['answer']); ?></td>
+                             <td><?php echo $row3['question']; ?></td>
+                           	 <td><?php echo  nl2br($row3['answer']); ?></td>
 
                              </tr>
                            <?php
@@ -226,6 +226,12 @@
                         </tr>
 
                     </tbody>
+										<thead>
+												<tr>
+													<td class="active" style="text-align: center;" colspan="6"> <strong>&nbsp</strong> </td>
+												</tr>
+
+                    </thead>
 
                 </table>
             </div>
