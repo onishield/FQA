@@ -21,7 +21,7 @@
 <body>
   <?php
   $sql = "SELECT question,answer FROM info";
-  $result = $conn->query($sql);
+
 //  $row = mysqli_fetch_array($result);
    ?>
 <div id="wrapper">
@@ -74,7 +74,7 @@
 
 			<div class="icon">
 				<label class="label" for="name">search</label>
-				<input class="user" type="text" name="name" id="name" required>
+				<input class="search_text" type="text" name="search_text" id="search_text" required>
 		    </div>
 
 
@@ -110,6 +110,13 @@
                             </td>
                         </tr> -->
                         <?php
+												if(isset($_POST["query"])){
+                       $search = mysqli_real_escape_string($connect, $_POST["query"]);
+                       $sql = "  SELECT * FROM info
+                       WHERE question LIKE '%".$search."%'
+                       OR answer LIKE '%".$search."%' ";
+                       }
+											 $result = $conn->query($sql);
                            if(mysqli_num_rows($result) == 0){
                          ?>
                           <tr>
@@ -122,6 +129,7 @@
                            ?>
                            <?php
                            $i = 0;
+
                            while($row = $result->fetch_array()){
                            ?>
                              <tr>
@@ -196,11 +204,13 @@
 														<th>Answer</th>
                         </tr>
                     </thead>
+
 										<?php
 										  $sql3 = "SELECT question,answer FROM info3";
 									  	$result3 = mysqli_query($conn, $sql3);
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
+										 <div id="result">
 										<tbody>
                         <?php
                            if(mysqli_num_rows($result) == 0){
@@ -231,6 +241,7 @@
                         </tr>
 
                     </tbody>
+										</div>
 										<thead>
 												<tr>
 													<td class="active" style="text-align: center;" colspan="6"> <strong>&nbsp</strong> </td>
@@ -243,3 +254,36 @@
 
 </body>
 </html>
+
+
+
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"page.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#result').html(data);
+   }
+  });
+ }
+ $('#search_text').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
+</script>
