@@ -5,6 +5,7 @@
 
 // Create connection
 $conn = new mysqli('localhost', 'root','', 'fqa');
+mysqli_set_charset($conn,"utf8");
 
 // Check connection
 if ($conn->connect_error) {
