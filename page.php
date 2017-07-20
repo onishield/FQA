@@ -16,8 +16,8 @@
 <body>
   <?php
   $sql = "SELECT question,answer FROM info";
-  $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_array($result);
+  $result = $conn->query($sql);
+//  $row = mysqli_fetch_array($result);
    ?>
 <div id="wrapper">
 		<header class="header-site">
@@ -82,6 +82,9 @@
 <div class="panel-body">
                 <table class="table display">
                     <thead>
+												<tr>
+													<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION</strong> </td>
+												</tr>
                         <tr>
                             <th>No.</th>
                             <th>Question</th>
@@ -114,12 +117,13 @@
                            ?>
                            <?php
                            $i = 0;
-                           while($row = mysqli_fetch_array($result)){
+                           while($row = $result->fetch_array()){
                            ?>
                              <tr>
                              <td><?php echo ++$i; ?></td>
                              <td><?php echo $row['question']; ?></td>
-                           <td><?php echo  nl2br($row['answer']); ?></td>
+                           	 <td><?php echo  nl2br($row['answer']); ?></td>
+														 <!--<td><?php echo hash('sha256', 'admin' ); ?></td>-->
 
 
                              </tr>
@@ -131,6 +135,98 @@
                         </tr>
 
                     </tbody>
+										<thead>
+												<tr>
+													<td class="active" style="text-align: center;" colspan="6"> <strong>TOOLS IN AAA SYSTEM</strong> </td>
+												</tr>
+                        <tr>
+                            <th>No.</th>
+                            <th>Question</th>
+														<th>Answer</th>
+                        </tr>
+                    </thead>
+										<?php
+										  $sql2 = "SELECT question,answer FROM info2";
+									  	$result2 = mysqli_query($conn, $sql2);
+									  //	$row2 = mysqli_fetch_array($result2);
+									   ?>
+										<tbody>
+                        <?php
+                           if(mysqli_num_rows($result) == 0){
+                         ?>
+                          <tr>
+                             <td class="active" style="text-align: center;" colspan="6">
+                                     <strong>Don't have Data </strong>
+                             </td>
+                          </tr>
+                         <?php
+                           }
+                           ?>
+                           <?php
+                           $i = 0;
+                           while($row2 = $result2->fetch_array()){
+                           ?>
+                             <tr>
+                             <td><?php echo ++$i; ?></td>
+                             <td><?php echo $row2['question']; ?></td>
+                           	 <td><?php echo  nl2br($row2['answer']); ?></td>
+
+                             </tr>
+                           <?php
+                                 }
+                           ?>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+										<thead>
+												<tr>
+													<td class="active" style="text-align: center;" colspan="6"> <strong>GENERAL QUESTIONS</strong> </td>
+												</tr>
+                        <tr>
+                            <th>No.</th>
+                            <th>Question</th>
+														<th>Answer</th>
+                        </tr>
+                    </thead>
+										<?php
+										  $sql2 = "SELECT question,answer FROM info2";
+									  	$result2 = mysqli_query($conn, $sql2);
+									  //	$row2 = mysqli_fetch_array($result2);
+									   ?>
+										<tbody>
+                        <?php
+                           if(mysqli_num_rows($result) == 0){
+                         ?>
+                          <tr>
+                             <td class="active" style="text-align: center;" colspan="6">
+                                     <strong>Don't have Data </strong>
+                             </td>
+                          </tr>
+                         <?php
+                           }
+                           ?>
+                           <?php
+                           $i = 0;
+                           while($row2 = $result2->fetch_array()){
+                           ?>
+                             <tr>
+                             <td><?php echo ++$i; ?></td>
+                             <td><?php echo $row2['question']; ?></td>
+                           	 <td><?php echo  nl2br($row2['answer']); ?></td>
+
+                             </tr>
+                           <?php
+                                 }
+                           ?>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
                 </table>
             </div>
 
