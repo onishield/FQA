@@ -313,10 +313,7 @@ a{
 	height: 700px;
 	width: 100%;
 	}
-	.container {
-		width: 960px;
-		margin: 0 auto;
-	}
+
 	.work-item {
 		width: 33.333%
 	}
@@ -608,6 +605,7 @@ FLoating labels
   .form div {
     /* form element wrapper */
     margin: 32px 0;
+    margin-top: 6%;
   }
   .form legend + div {
     /* reduce margin-top for first form element after the legend */
