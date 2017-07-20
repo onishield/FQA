@@ -75,7 +75,7 @@
 
 
 			<div class="icon">
-				
+
 				<input class="search_text" type="text" name="search_text" id="search_text" required>
 		    </div>
 
