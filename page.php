@@ -19,6 +19,15 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/loginmodel.css">
 	</head>
+=======
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>FQA</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+>>>>>>> c5e97b00ce60ac03ce657ef20a307dc3c1cccff0
 <body>
   <?php
 
@@ -116,7 +125,8 @@
 
 
 			<div class="icon">
-				<input class="search_text" placeholder="Search" type="text" name="search_text" id="search_text" required>
+
+				<input class="search_text" type="text" name="search_text" placeholder="Search" onkeyup="myFunction()" id="myInput" required>
 		    </div>
 
 
@@ -127,7 +137,7 @@
 </div>
 
 <div class="panel-body">
-                <table class="table display">
+                <table class="table display" >
                     <thead>
 												<tr>
 													<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION</strong> </td>
@@ -143,8 +153,8 @@
                             <th>แก้ไขคำตอบ</th> -->
                         </tr>
                     </thead>
-
-                    <tbody>
+<div id="result">
+                    <tbody id="myTable">
 
                        <!--  <tr>
                             <td class="active" style="text-align: center;" colspan="6">
@@ -152,14 +162,10 @@
                             </td>
                         </tr> -->
                         <?php
-												if(isset($_POST["query"])){
-                       $search = mysqli_real_escape_string($conn, $_POST["query"]);
-                       $sql = "  SELECT * FROM info
-                       WHERE question LIKE '%".$search."%'
-                       OR answer LIKE '%".$search."%' ";
-										 }else {
+
+
 										 	  $sql = "SELECT question,answer FROM info";
-										 }
+
 											 $result = $conn->query($sql);
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -207,7 +213,7 @@
 									  	$result2 = mysqli_query($conn, $sql2);
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
-										<tbody>
+										<tbody id="myTable">
                         <?php
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -255,8 +261,8 @@
 									  //	$row2 = mysqli_fetch_array($result2);
 									   ?>
 
-										<tbody>
-											<div id="result">
+										<tbody id="myTable">
+
                         <?php
                            if(mysqli_num_rows($result) == 0){
                          ?>
@@ -282,9 +288,9 @@
                                  }
                            ?>
                         </tr>
-</div>
-                    </tbody>
 
+                    </tbody>
+</div>
 										<thead>
 												<tr>
 													<td class="active" style="text-align: center;" colspan="6"> <strong>&nbsp</strong> </td>
@@ -295,38 +301,30 @@
                 </table>
             </div>
 
+
+						<script>
+
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>
-
-
-
-<script>
-$(document).ready(function(){
-
- load_data();
-
- function load_data(query)
- {
-  $.ajax({
-   url:"page.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('#result').html(data);
-   }
-  });
- }
- $('#search_text').keyup(function(){
-  var search = $(this).val();
-  if(search != '')
-  {
-   load_data(search);
-  }
-  else
-  {
-   load_data();
-  }
- });
-});
-</script>
