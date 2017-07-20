@@ -8,7 +8,6 @@
   tr:nth-child(even) {background-color: #ffdfa6}
 
 	</style>
-<<<<<<< HEAD
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
 		<title>FQA</title>
@@ -20,21 +19,6 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/loginmodel.css">
 	</head>
-=======
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	<title>FQA</title>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-</head>
->>>>>>> 7696e1fbdeaa1a219fac783be4491218527a1d21
 <body>
   <?php
 
@@ -84,7 +68,7 @@
 						<div id="id01" class="modal">
 
 							<form class="modal-content animate" action="/action_page.php">
-								
+
 
 								<div class="container">
 									<label><b>Username</b></label>
@@ -94,12 +78,6 @@
 									<input type="password" placeholder="Enter Password" name="psw" required>
 
 									<button type="submit">Login</button>
-									<input type="checkbox" checked="checked"> Remember me
-								</div>
-
-								<div class="container" style="background-color:#f1f1f1">
-									<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-									<span class="psw">Forgot <a href="#">password?</a></span>
 								</div>
 							</form>
 						</div>
@@ -138,12 +116,7 @@
 
 
 			<div class="icon">
-<<<<<<< HEAD
-				<label class="label" for="name">search</label>
-=======
-
->>>>>>> d8ac861ca135098d58736e10ee933a073a3a787f
-				<input class="search_text" type="text" name="search_text" id="search_text" required>
+				<input class="search_text" placeholder="Search" type="text" name="search_text" id="search_text" required>
 		    </div>
 
 
@@ -214,8 +187,8 @@
                            <?php
                                  }
                            ?>
-
-                            </td>
+													 <td style="background-color: #ffffff">
+													 </td>
                         </tr>
 
                     </tbody>
@@ -259,7 +232,7 @@
                            <?php
                                  }
                            ?>
-
+													 	<td style="background-color: #ffffff">
                             </td>
                         </tr>
 
@@ -308,8 +281,6 @@
                            <?php
                                  }
                            ?>
-
-                            </td>
                         </tr>
 </div>
                     </tbody>
