@@ -43,33 +43,6 @@
 
 								<a href="page.php"><button class="button button1" style="width:auto;">Logout</button></a>
 
-								<div id="id01" class="modal">
-
-									<form method="post" class="modal-content animate" action="checklogin.php">
-
-										<div class="container">
-											<label><b>Username</b></label>
-											<input type="text" placeholder="Enter Username" name="uname" required>
-
-											<label><b>Password</b></label>
-											<input type="password" placeholder="Enter Password" name="psw" required>
-
-											<button type="submit">Login</button>
-										</div>
-									</form>
-								</div>
-
-								<script>
-								// Get the modal
-								var modal = document.getElementById('id01');
-
-								// When the user clicks anywhere outside of the modal, close it
-								window.onclick = function(event) {
-									if (event.target == modal) {
-										modal.style.display = "none";
-									}
-								}
-								</script>
 							</ul>
 						</div>
 					</div><!-- container -->
@@ -176,13 +149,35 @@
                 <td><?php echo ++$i; ?></td>
                 <td><?php echo $row['question']; ?></td>
                 <td><?php echo nl2br($row['answer']); ?></td>
-                <td><input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED"; echo " disabled></td>"; ?>
-                <td><a href='edit.php?qid=<?=$row['id']?>'> <img src="edit.png" width="24" height="24"></a></td>
+                <td><input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED"; echo " disabled"; ?>></td>
+
+                <td><a onclick="document.getElementById('id02').style.display='block'"> <img src="edit.png" width="24" height="24"></a></td>
+
                 <td><a href='del.php?qid=<?=$row['id']?>'> <img src="delete.png" width="24" height="24"></a></td>
               </tr>
               <?php
               }
               ?>
+<div id="id02" class="modal"><form method="post" class="modal-content animate" action="edit.php"><div class="container">
+<label><b>Qusetion</b></label>
+<input type="text" placeholder="Enter Question" name="qust" disabled>
+<label><b>Answer</b></label>
+<input type="text" placeholder="Enter Answer" name="ans" required>
+<button type="submit">Submit</button>
+</div></form></div>
+
+              <script>
+              // Get the modal
+              var modal = document.getElementById('id02');
+
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              }
+              </script>
+
             </tbody>
           </div>
           <thead>
