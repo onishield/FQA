@@ -197,6 +197,8 @@
 						}
 						?>
 					</tbody>
+					<td style="background-color: #ffffff">
+					</td>
 					<thead>
 						<tr>
 							<td class="active" style="text-align: center;" colspan="6"> <strong>TOOLS IN AAA SYSTEM</strong> </td>
@@ -233,8 +235,6 @@
 						<?php
 						}
 						?>
-						<td style="background-color: #ffffff">
-						</td>
 					</tbody>
 				</div>
 				<thead>
@@ -243,16 +243,14 @@
 					</tr>
 				</thead>
 			</table>
-<<<<<<< HEAD
 		</div>
+
 		<div class='footer'>
-			<div id="wrapper">
-				jldsfioldjkgldsfjghkdlskjf
+			<div id="wrapper" style="background-color: #bfbfbf; height: 80px;">
+				<h5 style="float:left;margin-left: 20px;margin-top: 20px;">&copy; 2017 CAT TELECOM PUBLIC COMPANY LIMITED. All rights reserved.</h5>
+				<h5 style="float:right;margin-right: 20px;margin-top: 20px;">Thanarkom Khunboonchan | Trainee<br>Wongsathorn Charoenkul &nbsp| Trainee</h5>
 			</div>
 		</div>
-=======
-				</div>
->>>>>>> 4a85f615c4653cf0b948a7c38c33435e885bd003
 
 		<script>
 		function myFunction() {

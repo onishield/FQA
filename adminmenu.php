@@ -145,16 +145,16 @@
 						<td class="active" style="text-align: left;" colspan="6"> <strong>Question Management</strong> </td>
 					</tr>
 					<tr>
-						<th style="width:10%;">No.</th>
+						<th style="width:15%;">No.</th>
 						<th style="width:35%;">Question</th>
-						<th style="width:35%;">Answer</th>
+						<th style="width:40%;">Answer</th>
             <th style="width:10%;">Show</th>
             <th style="width:10%;">Delete</th>
 					</tr>
 				</thead>
         <div id="result">
           <?php
-          $sql = "SELECT question,answer FROM admin";
+          $sql = "SELECT question,answer,enable FROM admin";
           $result = mysqli_query($conn, $sql);
           ?>
           <tbody id="myTable">
@@ -174,11 +174,9 @@
               <tr>
                 <td><?php echo ++$i; ?></td>
                 <td><?php echo $row['question']; ?></td>
-                <td><?php echo  nl2br($row['answer']); ?></td>
-
-
-
+                <td><?php echo nl2br($row['answer']); ?></td>
                 <td><?php echo $row['enable']; ?></td>
+                <td><input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED"; echo " disabled></td>"; ?>
               </tr>
               <?php
               }
