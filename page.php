@@ -38,7 +38,7 @@
 
 								<button class="button button1" onclick="AskFunction()"  style="width:auto;">Ask</button>
 								<button class="button button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-								
+
 
 								<div id="id01" class="modal">
 
@@ -81,7 +81,7 @@
 			</form>
 		</div>
 		<div class="panel-body">
-			<table class="table display" >
+			<table class="table display" id="myTable">
 				<thead>
 					<tr>
 						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION</strong> </td>
@@ -93,7 +93,7 @@
 					</tr>
 				</thead>
 				<div id="result">
-					<tbody id="myTable">
+					<tbody>
 						<?php
 						$sql = "SELECT question,answer FROM info";
 						$result = $conn->query($sql);
@@ -135,7 +135,7 @@
 					$sql2 = "SELECT question,answer FROM info2";
 					$result2 = mysqli_query($conn, $sql2);
 					?>
-					<tbody id="myTable">
+					<tbody >
 						<?php
 						if(mysqli_num_rows($result) == 0){
 						?>
@@ -174,7 +174,7 @@
 				$sql3 = "SELECT question,answer FROM info3";
 				$result3 = mysqli_query($conn, $sql3);
 				?>
-				<tbody id="myTable">
+				<tbody >
 					<?php
 					if(mysqli_num_rows($result) == 0){
 					?>
@@ -204,7 +204,7 @@
 					</tr>
 				</thead>
 			</table>
-		</div>
+				</div>
 
 		<script>
 		function myFunction() {
@@ -234,7 +234,7 @@
     if (ask == null || ask == "") {
         txt = "User cancelled the prompt.";
     } else {
-				alert("Thank you for your enquiry, we will get back to you as soon.");
+				alert("Thank you for your enquiry, we will get back to you soon.");
     }
     document.getElementById("demo").innerHTML = txt;
 		}
