@@ -1,4 +1,4 @@
-<?php session_start(); require_once('connect.php');?>
+<?php session_start(); session_destroy(); require_once('connect.php');?>
 
 <!DOCTYPE html>
 
@@ -30,7 +30,7 @@
 								<span class="icon-bar"></span>
 
 							</button>
-							<a class="navbar-brand"><img src="Logo.png" width=100px height=30px;></a>
+							<a class="navbar-brand" href="page.php"><img src="Logo.png" width=100px height=30px;></a>
 						</div><!-- navbar-header -->
 
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -195,6 +195,45 @@
 						}
 						?>
 					</tbody>
+					<thead>
+						<tr>
+							<td class="active" style="text-align: center;" colspan="6"> <strong>TOOLS IN AAA SYSTEM</strong> </td>
+						</tr>
+						<tr>
+							<th>No.</th>
+							<th>Question</th>
+							<th>Answer</th>
+						</tr>
+					</thead>
+					<?php
+					$sql4 = "SELECT question,answer FROM admin";
+					$result4 = mysqli_query($conn, $sql4);
+					?>
+					<tbody id="myTable">
+						<?php
+						if(mysqli_num_rows($result4) == 0){
+						?>
+						<tr>
+							<td class="active" style="text-align: center;" colspan="6">
+								<strong>Don't have Data </strong>
+							</td>
+						</tr>
+						<?php
+						}
+						$i = 0;
+						while($row4 = $result4->fetch_array()){
+						?>
+						<tr>
+							<td><?php echo ++$i; ?></td>
+							<td><?php echo $row4['question']; ?></td>
+							<td><?php echo  nl2br($row4['answer']); ?></td>
+						</tr>
+						<?php
+						}
+						?>
+						<td style="background-color: #ffffff">
+						</td>
+					</tbody>
 				</div>
 				<thead>
 					<tr>
@@ -202,6 +241,11 @@
 					</tr>
 				</thead>
 			</table>
+		</div>
+		<div class='footer'>
+			<div id="wrapper">
+				jldsfioldjkgldsfjghkdlskjf
+			</div>
 		</div>
 
 		<script>
