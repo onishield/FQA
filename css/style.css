@@ -672,6 +672,7 @@ FLoating labels
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
+
 }
 
 .button1 {
@@ -679,6 +680,7 @@ FLoating labels
     color: black;
     border: 2px solid #f36f21;
     margin-top: 8px;
+    border-radius: 8px;
 
 }
 
