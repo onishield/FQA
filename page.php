@@ -36,7 +36,9 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 
+								<button class="button button1" onclick="AskFunction()"  style="width:auto;">Ask</button>
 								<button class="button button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+								
 
 								<div id="id01" class="modal">
 
@@ -224,6 +226,17 @@
 					}
 				}
 			}
+		}
+
+		function AskFunction(){
+			var txt;
+    var ask = prompt("Please enter your question:");
+    if (ask == null || ask == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+				alert("Thank you for your enquiry, we will get back to you as soon.");
+    }
+    document.getElementById("demo").innerHTML = txt;
 		}
 		</script>
 
