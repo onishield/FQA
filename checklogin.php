@@ -27,6 +27,6 @@ if($result){
 		echo "Wrong Username or Password".'<a href="page.php"><br>Go to Main Page</a>';
 	}
 }else{
-	die('Error: '.$q." ". $mysqli->error );
+	die('Error: '.$q." ". $conn->error );
 }
 ?>

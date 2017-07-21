@@ -145,16 +145,17 @@
 						<td class="active" style="text-align: left;" colspan="6"> <strong>Question Management</strong> </td>
 					</tr>
 					<tr>
-						<th style="width:15%;">No.</th>
-						<th style="width:35%;">Question</th>
+						<th style="width:5%;">No.</th>
+						<th style="width:40%;">Question</th>
 						<th style="width:40%;">Answer</th>
-            <th style="width:10%;">Show</th>
-            <th style="width:10%;">Delete</th>
+            <th style="width:5%;">Show</th>
+            <th style="width:5%;">Edit</th>
+            <th style="width:5%;">Delete</th>
 					</tr>
 				</thead>
         <div id="result">
           <?php
-          $sql = "SELECT question,answer,enable FROM admin";
+          $sql = "SELECT * FROM admin";
           $result = mysqli_query($conn, $sql);
           ?>
           <tbody id="myTable">
@@ -175,8 +176,9 @@
                 <td><?php echo ++$i; ?></td>
                 <td><?php echo $row['question']; ?></td>
                 <td><?php echo nl2br($row['answer']); ?></td>
-                <td><?php echo $row['enable']; ?></td>
                 <td><input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED"; echo " disabled></td>"; ?>
+                <td><a href='edit.php?qid=<?=$row['id']?>'> <img src="edit.png" width="24" height="24"></a></td>
+                <td><a href='del.php?qid=<?=$row['id']?>'> <img src="delete.png" width="24" height="24"></a></td>
               </tr>
               <?php
               }
