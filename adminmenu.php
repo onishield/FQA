@@ -22,7 +22,7 @@
         <?php
   		  if(isset($_SESSION['admin_id'])||isset($_SESSION['admin_pass'])){
   		  ?>
-				<nav class="navbar navbar-inverse navbar-fixed-top">
+				<nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 1;">
 
 					<div class="container">
 
@@ -50,7 +50,7 @@
         <?php
         }else{
         ?>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 1;">
 
 					<div class="container">
 
@@ -112,6 +112,7 @@
       <?php
 		  if(isset($_SESSION['admin_id'])||isset($_SESSION['admin_pass'])){
 		  ?>
+
       <table class="table display" >
         <thead>
 					<tr>
@@ -151,33 +152,13 @@
                 <td><?php echo nl2br($row['answer']); ?></td>
                 <td><input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED"; echo " disabled"; ?>></td>
 
-                <td><a onclick="document.getElementById('id02').style.display='block'"> <img src="edit.png" width="24" height="24"></a></td>
+                <td><a onclick="document.getElementById('id09').style.display='block'"><img src="edit.png" width="24" height="24"></a></td>
 
                 <td><a href='del.php?qid=<?=$row['id']?>'> <img src="delete.png" width="24" height="24"></a></td>
               </tr>
               <?php
               }
               ?>
-<div id="id02" class="modal"><form method="post" class="modal-content animate" action="edit.php"><div class="container">
-<label><b>Qusetion</b></label>
-<input type="text" placeholder="Enter Question" name="qust" disabled>
-<label><b>Answer</b></label>
-<input type="text" placeholder="Enter Answer" name="ans" required>
-<button type="submit">Submit</button>
-</div></form></div>
-
-              <script>
-              // Get the modal
-              var modal = document.getElementById('id02');
-
-              // When the user clicks anywhere outside of the modal, close it
-              window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none";
-                }
-              }
-              </script>
-
             </tbody>
           </div>
           <thead>
@@ -195,7 +176,33 @@
         }
         ?>
       </div>
-		<script>
-		</script>
+
+            <div id="id09" class="modal_1">
+              <form method="post" class="modal_1-content animate" action="edit.php">
+                <div class="container">
+                  <label><b>Qusetion</b></label>
+                  <input type="text" placeholder="Enter Question" name="qust" disabled>
+                  <label><b>Answer</b></label>
+                  <input type="text" placeholder="Enter Answer" name="ans" required>
+                  <label><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+                  <label><b>Show</b></label>
+                  <input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED";?>>
+                  <button type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+
+      <script>
+      // Get the modal
+      var modal_1 = document.getElementById('id09');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal_1) {
+          modal_1.style.display = "none";
+        }
+      }
+      </script>
 	</body>
 </html>
