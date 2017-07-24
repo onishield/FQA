@@ -58,7 +58,7 @@
 
 								<div id="id02" class="modal">
 
-									<form method="post" class="modal-content animate" action="">
+									<form method="post" class="modal-content animate" action="Ask.php">
 
 										<div class="container">
 											<label><b>Question</b></label>
@@ -233,7 +233,7 @@
 					</td>
 					<thead>
 						<tr>
-							<td class="active" style="text-align: center;" colspan="6"> <strong>TOOLS IN AAA SYSTEM</strong> </td>
+							<td class="active" style="text-align: center;" colspan="6"> <strong>ADDITIONAL QUESTION</strong> </td>
 						</tr>
 						<tr>
 							<th>No.</th>
