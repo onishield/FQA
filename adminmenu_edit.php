@@ -128,58 +128,44 @@ $_SESSION['LAST_ACTIVITY'] = time();
 					<tr>
 						<td class="active" style="text-align: left;" colspan="6"> <strong>Question Management</strong> </td>
 					</tr>
-					<tr>
-						<th style="width:5%;">No.</th>
-						<th style="width:40%;">Question</th>
-						<th style="width:40%;">Answer</th>
-            <th style="width:5%;">Show</th>
-            <th style="width:5%;">Edit</th>
-            <th style="width:5%;">Delete</th>
-					</tr>
 				</thead>
+			</table>
         <div id="result">
           <?php
-          $sql = "SELECT * FROM admin";
+					$id = $_GET['qid'];
+          $sql = "SELECT * FROM admin WHERE id=$id";
           $result = mysqli_query($conn, $sql);
+					if(!$result){
+						echo "Select failed: ".$mysqli->error;
+					}
+					$row = $result->fetch_array();
           ?>
-          <tbody id="myTable">
-            <?php
-            if(mysqli_num_rows($result) == 0){
-              ?>
-              <tr>
-                <td class="active" style="text-align: center;" colspan="6">
-                  <strong>Don't have Data </strong>
-                </td>
-              </tr>
-              <?php
-              }
-              $i = 0;
-              while($row = $result->fetch_array()){
-              ?>
-              <tr>
-                <td><?php echo ++$i; ?></td>
-                <td><?php echo $row['question']; ?></td>
-                <td><?php echo nl2br($row['answer']); ?></td>
-                <td><input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED"; echo " disabled"; ?>></td>
 
-                <!--<td><a onclick="document.getElementById('id09').style.display='block'"><img src="edit.png" width="24" height="24"></a></td>
-								-->
-								<td><a href='adminmenu_edit.php?qid=<?=$row['id']?>'><img src="edit.png" width="24" height="24"></a></td>
+					<div id="id09" class="modal_edit">
+		        <form method="post" class="modal_edit-content" action="update.php">
+		          <div class="container">
+		            <label><b>Qusetion</b></label>
+		            <input type="text" placeholder="Enter Question" value="<?=$row['question']?>" name="qust" readonly>
+		            <label><b>Answer</b></label>
+								<textarea name="ans"> <?=$row['answer']?></textarea>
+		            <label><b>Show</b></label>
 
-                <td><a href='del.php?qid=<?=$row['id']?>'> <img src="delete.png" width="24" height="24"></a></td>
-              </tr>
-              <?php
-              }
-              ?>
-            </tbody>
+								<?php
+								if($row['enable']){
+									$dis = ' checked ';
+								}else{
+									$dis = '';
+								}
+								?>
+								&nbsp<input type="checkbox" name="show" value="1" <?=$dis?>>
+
+		            <button type="submit">Submit</button>
+		          </div>
+		        </form>
+		      </div>
+
           </div>
-          <thead>
-            <tr>
-              <td class="active" style="text-align: center;" colspan="6"> <strong>&nbsp</strong> </td>
-            </tr>
-          </thead>
 
-        </table>
         <?php
         }else{
         ?>
@@ -189,21 +175,25 @@ $_SESSION['LAST_ACTIVITY'] = time();
         ?>
       </div>
 
-	      <div id="id09" class="modal_1">
-	        <form method="post" class="modal_1-content animate" action="edit.php">
-	          <div class="container">
-	            <label><b>Qusetion</b></label>
-	            <input type="text" placeholder="Enter Question" name="qust" readonly>
-	            <label><b>Answer</b></label>
-	            <input type="text" placeholder="Enter Answer" name="ans" required>
-	            <label><b>Show</b></label>
-	            &nbsp<input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED";?>>
-	            <button type="submit">Submit</button>
-	          </div>
-	        </form>
-	      </div>
+	    <div id="id09" class="modal_1">
+	      <form method="post" class="modal_1-content animate" action="edit.php">
+	        <div class="container">
+	          <label><b>Qusetion</b></label>
+	          <input type="text" placeholder="Enter Question" name="qust" readonly>
+	          <label><b>Answer</b></label>
+	          <input type="text" placeholder="Enter Answer" name="ans" required>
+	          <label><b>Show</b></label>
+	          &nbsp<input type='checkbox' <?php if ($row['enable'])	 echo "CHECKED";?>>
+	          <button type="submit">Submit</button>
+	        </div>
+	      </form>
+	    </div>
 
       <script>
+			function displayFunction(){
+
+				document.getElementById('id09').style.display='block'
+      	// Get the modal
       	var modal_1 = document.getElementById('id09');
 
       	// When the user clicks anywhere outside of the modal, close it
@@ -212,6 +202,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
           	modal_1.style.display = "none";
         	}
       	}
+
+
 
 			}
       </script>
