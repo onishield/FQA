@@ -9,6 +9,18 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+
+textarea {
+    min-height:200px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
 /* Set a style for all buttons */
 button {
     background-color: #f36f21;
@@ -98,22 +110,20 @@ span.psw {
     width: 60%; /* Could be more or less, depending on screen size */
 }
 
-.modal_2 {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+.modal_edit {
+    display: block;
+
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
+
 }
 
 /* Modal Content/Box */
-.modal_2-content {
+.modal_edit-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;

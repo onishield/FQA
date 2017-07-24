@@ -18,10 +18,11 @@ if($result){
 		$row = $result->fetch_array();
 		$_SESSION['admin_id'] = $row['username']; //Keep Data to Session
 		$_SESSION['admin_pass'] = $row['password']; //Keep Data to Session
+		$_SESSION['LAST_ACTIVITY'] = time();
 
 		echo "Login Success.".'<a href="adminmenu.php"><br>Go to Admin Page</a>';
 
-		//header('Location: adminmenu_hi.php');
+		header('Location: adminmenu.php');
 
 	}else{
 		echo "Wrong Username or Password".'<a href="page.php"><br>Go to Main Page</a>';
