@@ -68,29 +68,37 @@
 									</form>
 								</div>
 
-								<script>
-								// Get the modal
-								var modal = document.getElementById('id01');
-								var modal_2 = document.getElementById('id02');
-
-								// When the user clicks anywhere outside of the modal, close it
-								window.onclick = function(event) {
-									if (event.target == modal) {
-										modal.style.display = "none";
-									}
-								}
+														<script>
+														// Get the modal
+														var modal1 = document.getElementById('id01');
 
 
-								</script>
-								<script>
-								var modal_2 = document.getElementById('id02');
 
-								window.onclick = function(event) {
-									if (event.target == modal_2) {
-										modal_2.style.display = "none";
-									}
-								}
-						    </script>
+														// When the user clicks anywhere outside of the modal, close it
+														window.onclick = function(event) {
+															if (event.target == modal1) {
+																modal1.style.display = "none";
+															}
+														}
+
+														</script>
+
+
+																<script>
+
+																var modal2 = document.getElementById('id02');
+
+
+																// When the user clicks anywhere outside of the modal, close it
+																window.onclick = function(event) {
+																	if (event.target == modal2) {
+																		modal2.style.display = "none";
+																	}
+																}
+
+																</script>
+
+
 							</ul>
 						</div>
 					</div><!-- container -->
