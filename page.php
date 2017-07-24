@@ -36,7 +36,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 
-								<button class="button button1" onclick="AskFunction()"  style="width:auto;">Ask</button>
+								<button class="button button1" onclick="document.getElementById('id02').style.display='block'"  style="width:auto;">Ask</button>
 								<button class="button button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 
@@ -56,9 +56,22 @@
 									</form>
 								</div>
 
+								<div id="id02" class="modal">
+
+									<form method="post" class="modal-content animate" action="">
+
+										<div class="container">
+											<label><b>Question</b></label>
+											<input type="text" placeholder="Enter your question" name="question" required>
+											<button type="submit">Submit</button>
+										</div>
+									</form>
+								</div>
+
 								<script>
 								// Get the modal
 								var modal = document.getElementById('id01');
+								var modal_2 = document.getElementById('id02');
 
 								// When the user clicks anywhere outside of the modal, close it
 								window.onclick = function(event) {
@@ -66,7 +79,18 @@
 										modal.style.display = "none";
 									}
 								}
+
+
 								</script>
+								<script>
+								var modal_2 = document.getElementById('id02');
+
+								window.onclick = function(event) {
+									if (event.target == modal_2) {
+										modal_2.style.display = "none";
+									}
+								}
+						    </script>
 							</ul>
 						</div>
 					</div><!-- container -->
@@ -273,18 +297,15 @@
 				}
 			}
 		}
-
-		function AskFunction(){
-			var txt;
-    var ask = prompt("Please enter your question:");
-    if (ask == null || ask == "") {
-        txt = "User cancelled the prompt.";
-    } else {
-				alert("Thank you for your enquiry, we will get back to you soon.");
-    }
-    document.getElementById("demo").innerHTML = txt;
-		}
 		</script>
+
+
+
+
+
+
+
+
 
 	</body>
 </html>
