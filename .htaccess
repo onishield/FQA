@@ -11,7 +11,7 @@ ErrorDocument 502 /error.php
 ErrorDocument 504 /error.php
 
 #Access Control
-deny from all
+#deny from all
 
 #Rewrite Rule
 RewriteEngine on
