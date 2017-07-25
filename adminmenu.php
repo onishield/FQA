@@ -287,7 +287,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 					</tbody>
 					<thead>
 						<tr>
-							<td class="active" style="text-align: left; font-size: 30px;" colspan="6"> <strong>FAQ Management</strong> </td>
+							<td class="active" style="text-align: left; font-size: 30px;" colspan="6"> <strong>Additional Questions Management</strong> </td>
 						</tr>
 						<tr>
 							<th style="width:5%;">No.</th>

@@ -131,7 +131,7 @@ if ($tag == "1"){
 			<table class="table display" id="myTable">
 				<thead>
 					<tr>
-						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION <?php var_dump($tag);?></strong> </td>
+						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION </strong> </td>
 					</tr>
 					<tr>
 						<th>No.</th>
@@ -265,8 +265,8 @@ if ($tag == "1"){
 						if(mysqli_num_rows($result4) == 0){
 						?>
 						<tr>
-							<td class="active" style="text-align: center;" colspan="6">
-								<strong>Don't have Data </strong>
+							<td class="active" style="text-align: center; background-color: #ffd994;" colspan="6">
+								<strong style="color: #ff0000;">Don't have Data </strong>
 							</td>
 						</tr>
 						<?php
