@@ -1,0 +1,40 @@
+#Index
+DirectoryIndex page.php
+
+#Error
+ErrorDocument 400 /error.php
+ErrorDocument 401 /error.php
+ErrorDocument 403 /error.php
+ErrorDocument 404 /error.php
+ErrorDocument 500 /error.php
+ErrorDocument 502 /error.php
+ErrorDocument 504 /error.php
+
+#Access Control
+deny from all
+
+#Rewrite Rule
+RewriteEngine on
+RewriteRule ^adminmenu_edit_1.html$ adminmenu_edit_1.php?qid=$1
+RewriteRule ^adminmenu_edit_2.html$ adminmenu_edit_1.php?qid=$2
+RewriteRule ^adminmenu_edit_3.html$ adminmenu_edit_1.php?qid=$3
+RewriteRule ^adminmenu_edit.html$ adminmenu_edit.php?qid=$4
+
+#Prevent Directory Listing
+Options All -Indexes
+
+<FilesMatch ".(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+#---------------------------------------------------------------------------
+
+# proc/self/environ? noway!
+RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+
+# Block out any script trying to set a mosConfig value through the URL
+RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+
+# Block out any script trying to base64_encode crap to send via URL
+RewriteCond %{QUERY_STRING} base64_encode.*(.*) [OR]
