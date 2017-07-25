@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2017 at 07:10 AM
+-- Generation Time: Jul 25, 2017 at 08:29 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fqa`
+-- Database: `aaafaq`
 --
 
 -- --------------------------------------------------------
@@ -34,17 +34,6 @@ CREATE TABLE `admin` (
   `answer` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL,
   `enable` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `question`, `answer`, `enable`) VALUES
-(3, 'น้ำอะไรเอ่ย สามารถยืนได้', 'น้ำตื้นๆ', 0),
-(4, 'ทำไมบางคนถึงเจ็บหนังหัว', 'เพราะผมหยิก', 0),
-(5, 'เบคแฮมโดนใบแดงแล้วไปไหน', 'ไปเป็นทหาร', 0),
-(6, 'เลขอะไรมาก่อน 1 2 3', 'ก้อ เลข 1 2 2 ไง้', 0),
-(7, 'แมวอะไรเอ่ยอยู่ในดิน ?', 'แมวกัน (มันแกว)', 0);
 
 -- --------------------------------------------------------
 
@@ -184,7 +173,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `info`
 --
