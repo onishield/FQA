@@ -17,9 +17,8 @@
 	$answer = $_POST["ans"];
 	$enable = $_POST["enable"];
 
-	$q = "UPDATE admin SET question='$question',
-	answer='$answer',
-	enable='$enable'
+	$q = "UPDATE info SET question='$question',
+	answer='$answer'
 	WHERE id=$id";
 
 	if(!$conn->query($q)){

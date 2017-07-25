@@ -133,7 +133,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
         <div id="result">
           <?php
 					$id = $_GET['qid'];
-          $sql = "SELECT * FROM admin WHERE id=$id";
+          $sql = "SELECT * FROM info3 WHERE id=$id";
           $result = mysqli_query($conn, $sql);
 					if(!$result){
 						echo "Select failed: ".$mysqli->error;
@@ -142,22 +142,13 @@ $_SESSION['LAST_ACTIVITY'] = time();
           ?>
 
 					<div id="id09" class="modal_edit">
-		        <form method="post" class="modal_edit-content" action="update.php">
+		        <form method="post" class="modal_edit-content" action="update_3.php">
 		          <div class="container">
 		            <label><b>Qusetion</b></label>
 		            <input type="text" placeholder="Enter Question" value="<?=$row['question']?>" name="quest" readonly>
 		            <label><b>Answer</b></label>
 								<textarea name="ans"> <?=$row['answer']?></textarea>
-		            <label><b>Show</b></label>
 
-								<?php
-								if($row['enable']){
-									$dis = ' checked ';
-								}else{
-									$dis = '';
-								}
-								?>
-								&nbsp<input type="checkbox" name="enable" value="1" <?=$dis?>>
 								<input type="hidden" name="id" value="<?=$id?>" >
 
 		            <button type="submit">Submit</button>

@@ -36,8 +36,8 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 
-								<button class="button button1" onclick="document.getElementById('id02').style.display='block'"  style="width:auto;">Ask</button>
-								<button class="button button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+								<button class="button button1" onclick="display_ask()"  style="width:auto;">Ask</button>
+								<button class="button button1" onclick="display()" style="width:auto;">Login</button>
 
 
 								<div id="id01" class="modal">
@@ -56,9 +56,25 @@
 									</form>
 								</div>
 
-								<div id="id02" class="modal">
+								<script>
+								function display(){
+									// Get the modal
+									var modal = document.getElementById('id01');
+									document.getElementById('id01').style.display='block';
+									// When the user clicks anywhere outside of the modal, close it
+									window.onclick = function(event) {
+										if (event.target == modal) {
+											modal.style.display = "none";
+										}
+									}
+								}
 
-									<form method="post" class="modal-content animate" action="">
+								</script>
+
+
+								<div id="id04" class="modal_2">
+
+									<form method="post" class="modal_2-content animate" action="">
 
 										<div class="container">
 											<label><b>Question</b></label>
@@ -69,28 +85,18 @@
 								</div>
 
 								<script>
-								// Get the modal
-								var modal = document.getElementById('id01');
-								var modal_2 = document.getElementById('id02');
+								function display_ask(){
+									var modal_2 = document.getElementById('id04');
+									document.getElementById('id04').style.display='block';
 
-								// When the user clicks anywhere outside of the modal, close it
-								window.onclick = function(event) {
-									if (event.target == modal) {
-										modal.style.display = "none";
+									window.onclick = function(event) {
+										if (event.target == modal_2) {
+											modal_2.style.display = "none";
+										}
 									}
 								}
-
-
 								</script>
-								<script>
-								var modal_2 = document.getElementById('id02');
 
-								window.onclick = function(event) {
-									if (event.target == modal_2) {
-										modal_2.style.display = "none";
-									}
-								}
-						    </script>
 							</ul>
 						</div>
 					</div><!-- container -->
@@ -272,9 +278,11 @@
 		<div class='footer'>
 			<div id="wrapper" style="background-color: #bfbfbf; height: 80px;">
 				<h5 style="float:left;margin-left: 20px;margin-top: 20px;">&copy; 2017 CAT TELECOM PUBLIC COMPANY LIMITED. All rights reserved.</h5>
-				<h5 style="float:right;margin-right: 20px;margin-top: 20px;">Thanarkom Khunboonchan | Trainee<br>Wongsathorn Charoenkul &nbsp| Trainee</h5>
+				<h5 style="float:right;margin-right: 20px;margin-top: 20px;">Thanarkom Khunboonchan | Trainee<br>Wongsathorn Charoenkul &nbsp&nbsp| Trainee</h5>
 			</div>
 		</div>
+
+
 
 		<script>
 		function myFunction() {
@@ -298,14 +306,6 @@
 			}
 		}
 		</script>
-
-
-
-
-
-
-
-
 
 	</body>
 </html>

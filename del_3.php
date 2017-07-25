@@ -14,7 +14,7 @@ if(isset($_SESSION['admin_id'])||isset($_SESSION['admin_pass'])){
 	$id = $_GET['qid'];
 	require_once('connect.php');
 	if(isset($id)) {
-		$q="DELETE FROM admin WHERE id=$id";
+		$q="DELETE FROM info3 WHERE id=$id";
 		$q = strtolower($q);
 			if(!$conn->query($q)){
 				echo "DELETE failed. Error: ".$conn->error ;
