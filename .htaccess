@@ -1,6 +1,9 @@
 #Index
 DirectoryIndex page.php
 
+#Rewrite Enable
+RewriteEngine on
+
 #Error
 ErrorDocument 400 /error.php
 ErrorDocument 401 /error.php
@@ -14,7 +17,6 @@ ErrorDocument 504 /error.php
 #deny from all
 
 #Rewrite Rule
-RewriteEngine on
 RewriteRule ^adminmenu_edit_1.html$ adminmenu_edit_1.php?qid=$1
 RewriteRule ^adminmenu_edit_2.html$ adminmenu_edit_1.php?qid=$2
 RewriteRule ^adminmenu_edit_3.html$ adminmenu_edit_1.php?qid=$3
