@@ -72,9 +72,13 @@
 								</script>
 
 
+<<<<<<< HEAD
 								<div id="id04" class="modal_2">
 
 									<form method="post" class="modal_2-content animate" action="">
+=======
+									<form method="post" class="modal-content animate" action="Ask.php">
+>>>>>>> f3a3ffd8bc75f062e3673a10919d4cb39fad6efe
 
 										<div class="container">
 											<label><b>Question</b></label>
@@ -84,6 +88,7 @@
 									</form>
 								</div>
 
+<<<<<<< HEAD
 								<script>
 								function display_ask(){
 									var modal_2 = document.getElementById('id04');
@@ -96,6 +101,38 @@
 									}
 								}
 								</script>
+=======
+														<script>
+														// Get the modal
+														var modal1 = document.getElementById('id01');
+
+
+
+														// When the user clicks anywhere outside of the modal, close it
+														window.onclick = function(event) {
+															if (event.target == modal1) {
+																modal1.style.display = "none";
+															}
+														}
+
+														</script>
+
+
+																<script>
+
+																var modal2 = document.getElementById('id02');
+
+
+																// When the user clicks anywhere outside of the modal, close it
+																window.onclick = function(event) {
+																	if (event.target == modal2) {
+																		modal2.style.display = "none";
+																	}
+																}
+
+																</script>
+
+>>>>>>> f3a3ffd8bc75f062e3673a10919d4cb39fad6efe
 
 							</ul>
 						</div>
@@ -231,7 +268,7 @@
 					</td>
 					<thead>
 						<tr>
-							<td class="active" style="text-align: center;" colspan="6"> <strong>TOOLS IN AAA SYSTEM</strong> </td>
+							<td class="active" style="text-align: center;" colspan="6"> <strong>ADDITIONAL QUESTION</strong> </td>
 						</tr>
 						<tr>
 							<th>No.</th>
@@ -305,6 +342,14 @@
 				}
 			}
 		}
+<<<<<<< HEAD
+=======
+
+
+		function scrollWinDown() {
+		    window.scrollBy(0, 99999999);
+		}
+>>>>>>> f3a3ffd8bc75f062e3673a10919d4cb39fad6efe
 		</script>
 
 	</body>

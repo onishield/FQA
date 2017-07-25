@@ -110,6 +110,7 @@ span.psw {
     width: 60%; /* Could be more or less, depending on screen size */
 }
 
+<<<<<<< HEAD
 .modal_2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -131,6 +132,8 @@ span.psw {
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
 }
+=======
+>>>>>>> f3a3ffd8bc75f062e3673a10919d4cb39fad6efe
 
 .modal_edit {
     display: block;
