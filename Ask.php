@@ -2,6 +2,8 @@
   session_start();
   require_once('connect.php');
   $ques = $_POST['question'];
+  $tags = $_POST['tag'];
+  $_SESSION['tag']=$tags;
 
   $sql = "INSERT INTO admin (question)
   VALUES ('$ques')";

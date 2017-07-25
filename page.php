@@ -1,4 +1,19 @@
-<?php session_start(); session_destroy(); require_once('connect.php');?>
+<?php session_start();
+$tag=$_SESSION['tag'];
+session_destroy();
+require_once('connect.php');
+
+echo '<script type="text/javascript">';
+echo 'function WinDown(){
+  window.scrollBy(0, 99999999);
+};';
+echo '</script>';
+
+if ($tag == "1"){
+	echo '<BODY onLoad=" WinDown()">';
+
+}
+?>
 
 <!DOCTYPE html>
 
@@ -74,12 +89,14 @@
 
 								<div id="id04" class="modal_2">
 
-									<form method="post" class="modal_2-content animate" action="">
+									<form method="post" class="modal_2-content animate" action="Ask.php">
 
 										<div class="container">
 											<label><b>Question</b></label>
 											<input type="text" placeholder="Enter your question" name="question" required>
-											<button type="submit">Submit</button>
+											<input type="hidden" name="tag" value="1">
+											<button type="submit" onclick="Dialog()">Submit</button>
+
 										</div>
 									</form>
 								</div>
@@ -114,7 +131,7 @@
 			<table class="table display" id="myTable">
 				<thead>
 					<tr>
-						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION</strong> </td>
+						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION <?php var_dump($tag);?></strong> </td>
 					</tr>
 					<tr>
 						<th>No.</th>
@@ -231,7 +248,7 @@
 					</td>
 					<thead>
 						<tr>
-							<td class="active" style="text-align: center;" colspan="6"> <strong>ADDITIONAL QUESTION</strong> </td>
+							<td class="active" style="text-align: center;" colspan="6"> <strong>ADDITIONAL QUESTIONS</strong> </td>
 						</tr>
 						<tr>
 							<th>No.</th>
@@ -282,8 +299,6 @@
 			</div>
 		</div>
 
-
-
 		<script>
 		function myFunction() {
 			// Declare variables
@@ -306,9 +321,8 @@
 			}
 		}
 
-
-		function scrollWinDown() {
-		    window.scrollBy(0, 99999999);
+		function Dialog() {
+    alert("Thank you, your question has been sent.");
 		}
 		</script>
 
