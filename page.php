@@ -305,15 +305,12 @@
 				}
 			}
 		}
+
+
+		function scrollWinDown() {
+		    window.scrollBy(0, 99999999);
+		}
 		</script>
-
-
-
-
-
-
-
-
 
 	</body>
 </html>

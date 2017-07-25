@@ -15,6 +15,7 @@
   }
 
   $conn->close();
+  header("Location: page.php");
 
 
 ?>
