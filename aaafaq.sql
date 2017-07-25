@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 25, 2017 at 08:29 AM
--- Server version: 10.1.24-MariaDB
--- PHP Version: 7.1.6
+-- Host: localhost
+-- Generation Time: Jul 25, 2017 at 10:47 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,10 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `question` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL,
-  `answer` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL,
+  `question` text NOT NULL,
+  `answer` text NOT NULL,
   `enable` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -43,9 +41,9 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `info` (
   `id` int(11) NOT NULL,
-  `question` text CHARACTER SET utf8mb4 COLLATE utf8mb4_thai_520_w2 NOT NULL,
-  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `question` text CHARACTER SET utf8mb4 NOT NULL,
+  `answer` text CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info`
@@ -73,9 +71,9 @@ INSERT INTO `info` (`id`, `question`, `answer`) VALUES
 
 CREATE TABLE `info2` (
   `id` int(11) NOT NULL,
-  `question` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL,
-  `answer` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `question` text NOT NULL,
+  `answer` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info2`
@@ -95,9 +93,9 @@ INSERT INTO `info2` (`id`, `question`, `answer`) VALUES
 
 CREATE TABLE `info3` (
   `id` int(11) NOT NULL,
-  `question` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL,
-  `answer` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `question` text NOT NULL,
+  `answer` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info3`
@@ -120,9 +118,9 @@ INSERT INTO `info3` (`id`, `question`, `answer`) VALUES
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
-  `username` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL,
-  `password` text CHARACTER SET utf8 COLLATE utf8_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `username` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `login`
@@ -193,8 +191,7 @@ ALTER TABLE `info3`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
