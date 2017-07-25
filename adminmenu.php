@@ -308,8 +308,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
 							if(mysqli_num_rows($result4) == 0){
 								?>
 								<tr>
-									<td class="active" style="text-align: center;" colspan="6">
-										<strong>Don't have Data </strong>
+									<td class="active" style="text-align: center; background-color: #ffd994;" colspan="6">
+										<strong style="color: #ff0000;">Don't have Data </strong>
 									</td>
 								</tr>
 								<?php
