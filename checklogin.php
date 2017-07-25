@@ -4,7 +4,7 @@ require_once('connect.php');
 
 $user = $_POST['uname'];
 $pass = $_POST['psw'];
-$re_user=hash('sha256',$user);
+$re_user=$user;
 $re_pass=hash('sha256',$pass);
 
 $q = "SELECT * FROM login WHERE username = '$re_user' AND password = '$re_pass' ";
