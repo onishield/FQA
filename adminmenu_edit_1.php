@@ -181,8 +181,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
 	      </form>
 	    </div>
 
-			<?php include "./footer.php" ?>
-
       <script>
 			function displayFunction(){
 

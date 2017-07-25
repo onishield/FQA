@@ -364,8 +364,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
 	        </form>
 	      </div>
 
-			<?php include "./footer.php" ?>
-
       <script>
       	var modal_1 = document.getElementById('id09');
 
