@@ -131,7 +131,7 @@ if ($tag == "1"){
 			<table class="table display" id="myTable">
 				<thead>
 					<tr>
-						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTION </strong> </td>
+						<td class="active" style="text-align: center;" colspan="6"> <strong>AAA QUESTIONS </strong> </td>
 					</tr>
 					<tr>
 						<th>No.</th>
