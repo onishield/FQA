@@ -4,7 +4,7 @@
 //$password = "password";
 
 // Create connection
-$conn = new mysqli('localhost', 'root','', 'fqa');
+$conn = new mysqli('localhost', 'faquser','za0w9dkskm', 'aaafaq');
 mysqli_set_charset($conn,"utf8");
 
 // Check connection
