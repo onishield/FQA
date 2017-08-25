@@ -129,29 +129,29 @@ for(var i=0;i<arr.length;i++){
 console.log(obj);
 
 //#11
-// let input="bananabanana";
-// let output = input.toLowerCase();
-// let arr = output.split("");
-// var obj={};
-// for(var i=0;i<arr.length;i++){
-//   if(obj[arr[i]]==null){
-//     obj[arr[i]]=1;
-//   }else{
-//     obj[arr[i]]+=1;
-//   }
-// }
-// // console.log(obj);
-// for(h in obj){
-//   if(obj[h] == 1){
-//     var value=h;
-//     //  console.log(h);
-//     break;
-//   }
-// }
-// for(var y=0;y<output.length;y++){
-//    if(output[y]==value){
-//      console.log(input[y]);
-//
-//    }
-//    else{}
-// }
+let input="bananabanana";
+let output = input.toLowerCase();
+let arr = output.split("");
+var obj={};
+for(var i=0;i<arr.length;i++){
+  if(obj[arr[i]]==null){
+    obj[arr[i]]=1;
+  }else{
+    obj[arr[i]]+=1;
+  }
+}
+// console.log(obj);
+for(h in obj){
+  if(obj[h] == 1){
+    var value=h;
+    //  console.log(h);
+    break;
+  }
+}
+for(var y=0;y<output.length;y++){
+   if(output[y]==value){
+     console.log(input[y]);
+
+   }
+   else{}
+}
