@@ -357,3 +357,41 @@
 // let text = "({})()";
 // console.log(array);
 // console.log(text,check(text));
+
+let text = "({{{{{(})}}}}[])";
+console.log(text,check(text));
+text = "({}[)]";
+console.log(text,check(text));
+
+function check(text){
+  let arr1 = [];
+  for(i =0;i<text.length ; i++){
+    let symbol = text[i];
+    if (symbol == '[' || symbol == '{' || symbol == '('){
+      arr1.push(symbol);
+    }
+    else if(symbol == ']'){
+      if(arr1.pop() != '['){
+        return false;
+      }
+    }
+    else if(symbol == '}'){
+      if(arr1.pop() != '{'){
+        return false;
+      }
+    }
+    else if(symbol == ')'){
+      if(arr1.pop() != '('){
+        return false;
+      }
+    }else{
+      return false;
+    }
+  }
+   if(arr1.length==0){
+     return true;
+   }else{
+     return false;
+   }
+ }
+
